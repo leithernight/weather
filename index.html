@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>
+                <img src="images/weather-forecast.png" alt="">
+                <span>Weather</span>
+            </h1>
+            <div>
+                <input id="search" type="text" placeholder="city name">
+                <img id="btn__search" src="images/free-icon-magnifier-2319177.png" alt="">
+            </div>
+        </div>        
+    </header>
+
+    <nav>
+        <div class="container">
+            <a href="" id="btn__today" class="active">Today</a>
+            <a href="" id="btn__5day">5-day forecast</a>
+        </div>
+    </nav> 
+
+    <main>
+        <div class="container">
+            <section id="block__today" class="cntr">
+                <div class="hdr">
+                    <h3>Current weather</h3>
+                    <h3 id="today__date"></h3>
+                </div>
+                <div class="main-container_content">
+                    <div class="main-container_icon">
+                        <img id="today__icon" src="" alt="">
+                        <span id="today__desc"></span>
+                    </div>
+                    <div class="main-container_temp">
+                        <span id="today__temp" class="temp"></span>
+                        <span id="today__feels" class="feels"></span>
+                    </div>
+                    <div class="main-container_sun-day">
+                        <img src="images/free-icon-sunrise-1163663.png" alt="">
+                        <div class="sunrise">
+                            <span>Sunrise: </span>
+                            <span id="today__sunrise">07:00</span>
+                        </div>
+                        <img src="images/free-icon-sunset-1163664.png" alt="">
+                        <div class="sunset">
+                            <span>Sunset: </span>
+                            <span id="today__sunset">17:00</span>
+                        </div>
+                        <img src="images/free-icon-clock-12030078.png" alt="">
+                        <div class="duration">
+                            <span>Duration: </span>
+                            <span id="today__duration">08:00 hr</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="block__5day" class="cntr disabled">
+                <div class="five_content">
+                    <div class="cell selected">
+                        <div class="hdr">
+                            Today
+                        </div>
+                        <div class="content">
+                            <span class="day">Jun 30</span>
+                            <img src="images/free-icon-sun-1163662.png" alt="">
+                            <span class="temp">29°C</span>
+                            <span class="forecast">Clear, warm</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="hdr">
+                            Sun
+                        </div>
+                        <div class="content">
+                            <span class="day">Jun 30</span>
+                            <img src="images/free-icon-sun-1163662.png" alt="">
+                            <span class="temp">29°C</span>
+                            <span class="forecast">Clear, warm</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="hdr">
+                            Mon
+                        </div>
+                        <div class="content">
+                            <span class="day">Jul 01</span>
+                            <img src="images/free-icon-sun-1163662.png" alt="">
+                            <span class="temp">29°C</span>
+                            <span class="forecast">Clear, warm</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="hdr">
+                            Tue
+                        </div>
+                        <div class="content">
+                            <span class="day">Jul 02</span>
+                            <img src="images/free-icon-sun-1163662.png" alt="">
+                            <span class="temp">29°C</span>
+                            <span class="forecast">Clear, warm</span>
+                        </div>
+                    </div>
+                    <div class="cell">
+                        <div class="hdr">
+                            Wed
+                        </div>
+                        <div class="content">
+                            <span class="day">Jul 03</span>
+                            <img src="images/free-icon-sun-1163662.png" alt="">
+                            <span class="temp">29°C</span>
+                            <span class="forecast">Clear, warm</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="block__error" class="disabled">
+                <div class="error_content">
+                    <h1>404!</h1>
+                    <p>Something went wrong, please try again...</p>
+                </div>
+            </section>
+            <section id="block__hourly" class="cntr">
+                <div class="hdr">
+                    <h3>Hourly</h3>
+                </div>
+                <div class="hourly_content">
+                    <span class="day">Today</span>
+                    <span class="hourly__hour"></span>
+                    <span class="hourly__hour"></span>
+                    <span class="hourly__hour"></span>
+                    <span class="hourly__hour"></span>
+                    <span class="hourly__hour"></span>
+                    <span class="hourly__hour"></span>
+                    <img class="hourly__icon" src="" alt="">
+                    <img class="hourly__icon" src="" alt="">
+                    <img class="hourly__icon" src="" alt="">
+                    <img class="hourly__icon" src="" alt="">
+                    <img class="hourly__icon" src="" alt="">
+                    <img class="hourly__icon" src="" alt="">
+                    <span class="type">Forecast</span>
+                    <span class="hourly__forecast"></span>
+                    <span class="hourly__forecast"></span>
+                    <span class="hourly__forecast"></span>
+                    <span class="hourly__forecast"></span>
+                    <span class="hourly__forecast"></span>
+                    <span class="hourly__forecast"></span>
+                    <span class="type">Temp °C</span>
+                    <span class="hourly__temp"></span>
+                    <span class="hourly__temp"></span>
+                    <span class="hourly__temp"></span>
+                    <span class="hourly__temp"></span>
+                    <span class="hourly__temp"></span>
+                    <span class="hourly__temp"></span>
+                    <span class="type">Feels</span>
+                    <span class="hourly__feels"></span>
+                    <span class="hourly__feels"></span>
+                    <span class="hourly__feels"></span>
+                    <span class="hourly__feels"></span>
+                    <span class="hourly__feels"></span>
+                    <span class="hourly__feels"></span>
+                    <span class="type">Wind speed km/h</span>
+                    <span class="hourly__wind"></span>
+                    <span class="hourly__wind"></span>
+                    <span class="hourly__wind"></span>
+                    <span class="hourly__wind"></span>
+                    <span class="hourly__wind"></span>
+                    <span class="hourly__wind"></span>
+                </div>
+            </section>
+
+            <section id="block__nearby" class="cntr">
+                <div class="hdr">
+                    <h3>Nearby places</h3>
+                </div>
+                <div class="nearby_content">
+                    <div class="place">
+                        <span class="city"></span>
+                        <img src="" alt="">
+                        <span class="temp"></span>
+                    </div>
+                    <div class="place">
+                        <span class="city"></span>
+                        <img src="" alt="">
+                        <span class="temp"></span>
+                    </div>
+                    <div class="place">
+                        <span class="city"></span>
+                        <img src="" alt="">
+                        <span class="temp"></span>
+                    </div>
+                    <div class="place">
+                        <span class="city"></span>
+                        <img src="" alt="">
+                        <span class="temp"></span>
+                    </div>
+            </section>
+        </div>
+    </main> 
+    <script src="index.js"></script>
+</body>
+</html>
